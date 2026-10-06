@@ -1,0 +1,162 @@
+{
+  "platform": "eRTMAC-NWIS Enterprise Real-Time Rig Intelligence Platform",
+  "organization": "Oil India Limited (Assam Shelf Operations Center)",
+  "exportTimestamp": "2026-09-30T12:54:00Z",
+  "activeWell": {
+    "wellId": "OIL-204",
+    "name": "OIL-204 (Duliajan North Development)",
+    "rig": "Rig-OIL-09 (2000 HP Electra)",
+    "field": "Duliajan Field",
+    "spudDate": "2026-08-12",
+    "targetDepthMeters": 3450,
+    "currentDepthMeters": 2518.4,
+    "currentFormation": "Barail Sandstone & Middle Shale",
+    "mudSystem": "KCl Polymer Water-Based Mud",
+    "casingStatus": "9-5/8 in set @ 2100 m",
+    "overallHealthScore": 84
+  },
+  "ertmacLiveKafkaTelemetry": [
+    {
+      "timestamp": "12:54:01",
+      "depthMeters": 2518.4,
+      "ropMetersPerHour": 14.8,
+      "torqueFtLbs": 13200,
+      "standpipePressurePsi": 2450,
+      "wobMetricTons": 18.5,
+      "rpm": 120,
+      "mudWeightInPpg": 10.8,
+      "mudWeightOutPpg": 10.78,
+      "flowRateInGpm": 680,
+      "flowRateOutGpm": 678,
+      "pitVolumeBbl": 420.5,
+      "gasReadingPercent": 0.8,
+      "status": "NORMAL"
+    },
+    {
+      "timestamp": "12:54:05",
+      "depthMeters": 2518.9,
+      "ropMetersPerHour": 15.2,
+      "torqueFtLbs": 13450,
+      "standpipePressurePsi": 2465,
+      "wobMetricTons": 18.8,
+      "rpm": 122,
+      "mudWeightInPpg": 10.8,
+      "mudWeightOutPpg": 10.77,
+      "flowRateInGpm": 680,
+      "flowRateOutGpm": 676,
+      "pitVolumeBbl": 420.2,
+      "gasReadingPercent": 0.9,
+      "status": "NORMAL"
+    },
+    {
+      "timestamp": "12:54:10",
+      "depthMeters": 2519.4,
+      "ropMetersPerHour": 16.0,
+      "torqueFtLbs": 14100,
+      "standpipePressurePsi": 2490,
+      "wobMetricTons": 19.2,
+      "rpm": 125,
+      "mudWeightInPpg": 10.8,
+      "mudWeightOutPpg": 10.74,
+      "flowRateInGpm": 680,
+      "flowRateOutGpm": 671,
+      "pitVolumeBbl": 419.8,
+      "gasReadingPercent": 1.1,
+      "status": "ALERT_MINOR_MUDLOSS"
+    }
+  ],
+  "predictiveRiskScores": {
+    "overallRiskIndexPercent": 24,
+    "mudLossRisk": {
+      "probabilityPercent": 34,
+      "level": "MODERATE",
+      "triggerCondition": "Flow Out < Flow In by 9 gpm at 2518m Barail transition",
+      "recommendedAction": "Pre-mix 40 bbl Fibrous Nutplug pill in slug pit"
+    },
+    "gasKickRisk": {
+      "probabilityPercent": 18,
+      "level": "LOW",
+      "triggerCondition": "Pit volume delta +0.3 bbl, gas reading 1.1%",
+      "recommendedAction": "Maintain continuous trip tank monitoring"
+    },
+    "stuckPipeRisk": {
+      "probabilityPercent": 14,
+      "level": "LOW",
+      "triggerCondition": "Torque fluctuations within +/- 800 ft-lbs baseline",
+      "recommendedAction": "Maintain drillstring rotation above 90 RPM"
+    },
+    "shaleHydrationRisk": {
+      "probabilityPercent": 22,
+      "level": "LOW_MODERATE",
+      "triggerCondition": "KCl concentration at 6.8%",
+      "recommendedAction": "Top up KCl polymer concentration to > 7.5%"
+    }
+  },
+  "offsetWellKnowledgeDatabase": [
+    {
+      "wellId": "OIL-102",
+      "fieldName": "Duliajan East",
+      "distanceKm": 1.8,
+      "similarityScorePercent": 94,
+      "incidentHistory": [
+        {
+          "depthMeters": 2518,
+          "formation": "Barail Sandstone",
+          "incidentType": "Mud Loss (18 bbl/hr)",
+          "mitigationRecipe": "Pumped 40 bbl Fibrous LCM blend (Nutplug + Mica)",
+          "savedNptHours": 6.5
+        }
+      ]
+    },
+    {
+      "wellId": "OIL-91",
+      "fieldName": "Naharkatia North",
+      "distanceKm": 4.5,
+      "similarityScorePercent": 91,
+      "incidentHistory": [
+        {
+          "depthMeters": 2610,
+          "formation": "Barail Gas Sand",
+          "incidentType": "Gas Kick (12 bbl gain)",
+          "mitigationRecipe": "Closed BOP, weighted mud from 10.6 ppg to 11.4 ppg via Driller's Method",
+          "savedNptHours": 18.0
+        }
+      ]
+    }
+  ],
+  "operationalIntelligenceSuite": {
+    "preSpudSafetyReadinessScorePercent": 98.5,
+    "toolLifePredictionRUL": {
+      "pdcDrillBit619RulHours": 42.5,
+      "mudPumpPistonRulHours": 118.0,
+      "topDriveMotorRulHours": 210.0
+    },
+    "carbonAwareAdvisor": {
+      "rigFuelConsumptionLitersPerHour": 345,
+      "co2EmissionsMetricTonsPerDay": 21.8,
+      "ecoDrillingOptimizationMode": "ACTIVE"
+    },
+    "costImpactPredictor": {
+      "nptPreventedHours": 18.5,
+      "totalCostSavedINR": 22500000
+    },
+    "surfaceWeatherRisk": {
+      "weatherCondition": "Heavy Rain & Wind",
+      "windSpeedKmph": 28,
+      "windDirection": "SW -> NE",
+      "evacuationDirection": "Northeast Muster Point A",
+      "floodRiskLevel": "LOW"
+    }
+  },
+  "expertVoiceKnowledgeCapture": {
+    "audioTranscript": "Watch for minor shale swelling around 2450 m in upper Kopili transition. Maintain KCL polymer concentration above 6%. Pre-mix 40 bbl Fibrous Nutplug pill in slug pit.",
+    "whisperConfidencePercent": 98.6,
+    "nlpExtractedEntities": {
+      "formation": "Kopili Shale Transition",
+      "extractedDepthMeters": 2450,
+      "hazardType": "Shale Hydration / Swelling",
+      "recommendedAction": "Maintain KCl concentration > 6%",
+      "capturedBy": "Senior Drilling Engineer (Assam Field Operations)"
+    }
+  }
+}
